@@ -49,5 +49,6 @@ post /api/files
 
 ## To-dos
 - Cache parsed csv files
+- Display errors
 - Write tests for the api
 - Write tests for the frontend
