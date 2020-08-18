@@ -20,7 +20,7 @@ The Express API is in the root directory.
 
 The React app is in the client directory.
 
-Create an `uploads` in the foot directory:
+Create an `uploads` in the root directory:
 - In the root directory run `mkdir uploads`
 
 Install the dependencies:
