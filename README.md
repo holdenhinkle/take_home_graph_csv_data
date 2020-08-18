@@ -20,11 +20,13 @@ The Express API is in the root directory.
 
 The React app is in the client directory.
 
-Install the dependencies
-In the root directory and run `npm install`
+Create an `uploads` in the foot directory:
+- In the root directory run `mkdir uploads`
 
-`cd` into `clients`
-In the clients directory and run `npm install`
+Install the dependencies:
+- In the root directory run `npm install`
+- `cd` into `clients`
+- In the clients directory and run `npm install`
 
 ## Run
 In the root directory, run `PORT=3001 npm start` to start the express API on port 3001.
