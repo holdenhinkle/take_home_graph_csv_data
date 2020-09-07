@@ -21,10 +21,11 @@ export default class SingleFileDashBoard extends Component {
 
   async componentDidMount() {
     const { limit, offset } = this.state;
+    const { filename } = this.props.match.params;
     const params = { limit, offset };
 
     try {
-      const res = await axios.get(`/api/files/${this.props.viewFileName}`, { params });
+      const res = await axios.get(`/api/files/${filename}`, { params });
       const { data } = res;
       this.updateData(data)
     } catch (error) {
@@ -75,18 +76,6 @@ export default class SingleFileDashBoard extends Component {
     this.updateOffset(this.state.offset + this.state.limit);
   }
 
-  handleHome = () => {
-    this.setState({
-      loaded: false,
-      size: null,
-      tableHeaderData: null,
-      tableBodyData: null,
-      length: null,
-      statistics: null,
-      createdAt: null,
-    }, () => this.props.handleViewAll());
-  }
-
   openModal = () => this.setState({ modalIsOpen: true });
 
   closeModal = () => this.setState({ modalIsOpen: false });
@@ -126,7 +115,6 @@ export default class SingleFileDashBoard extends Component {
     return (
       <div>
         <h1>File: {this.props.viewFileName}</h1>
-        <Button variant="primary" size="sm" onClick={this.handleHome}>&#60; Back</Button>
         {
           this.state.loaded
             ?

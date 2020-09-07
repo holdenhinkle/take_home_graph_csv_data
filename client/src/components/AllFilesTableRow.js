@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import download from 'js-file-download';
 import Button from 'react-bootstrap/Button';
 
 export default class AllFilesTableRow extends Component {
-  onHandleViewFile = () => {
-    this.props.handleViewFile(this.props.name);
-  }
+  // onHandleViewFile = () => {
+  //   this.props.handleViewFile(this.props.name);
+  // }
 
   handleDownloadFile = async () => {
     try {
@@ -25,7 +26,7 @@ export default class AllFilesTableRow extends Component {
         <td>{name}</td>
         <td>{Number(size / 1000000).toFixed(2)}MB</td>
         <td>{createdAt}</td>
-        <td><Button variant="light" size="sm" onClick={this.onHandleViewFile}>View File</Button></td>
+        <td><Link to={name} ><Button>View File</Button></Link> </td>
         <td><Button variant="light" size="sm" onClick={this.handleDownloadFile}>Download</Button></td>
       </tr>
     );
